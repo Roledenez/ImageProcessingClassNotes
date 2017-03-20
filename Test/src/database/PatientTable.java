@@ -12,7 +12,7 @@ import java.sql.SQLException;
  * Created by Roledene on 3/20/2017.
  */
 public class PatientTable {
-    //get a raw
+    //get a row
     public static Patient getRow(int pid) throws SQLException {
         String sql = "SELECT * FROM patient WHERE pid=?";
         ResultSet rs = null;
@@ -51,7 +51,7 @@ public class PatientTable {
         }
     }
 
-    //insert a raw
+    //insert a row
     public static boolean insert(Patient bean) throws Exception{
 
         String sql= "INSERT INTO patient(pid,name,age,nic)"+
@@ -84,7 +84,61 @@ public class PatientTable {
         return true;
     }
 
-    //delete a raw
+    //delete a row
+    public static boolean delete(int pid) throws Exception{
 
-    //update a raw
+        String sql ="DELETE FROM patient WHERE pid=?";
+        try(    Connection conn = DBUtil.getConnection(DBType.MYSQL);
+                PreparedStatement stmt = conn.prepareStatement(sql);
+        )
+        {
+            stmt.setInt(1, pid);
+
+            int affacted = stmt.executeUpdate();
+
+            if(affacted==1){
+                return true;
+            }else{
+                return false;
+            }
+
+        }catch(Exception e){
+            return false;
+        }
+    }
+
+    //update a row
+    public static boolean update(Patient bean) throws Exception{
+
+        String sql = "UPDATE patient SET "+
+                "nic=?, "+
+                "name=?, "+
+                "age=? "+
+                "WHERE pid=?";
+        try (
+                Connection conn = DBUtil.getConnection(DBType.MYSQL);
+                PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+        ){
+            stmt.setString(1,bean.getNic());
+            stmt.setString(2,bean.getName());
+            stmt.setInt(3,bean.getAge());
+            stmt.setInt(4,bean.getPid());
+
+            int affacted = stmt.executeUpdate();
+
+            if(affacted==1){
+                return true;
+            }else{
+                System.err.println("No rows affacted");
+                return false;
+            }
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        } finally{
+
+        }
+
+    }
 }
