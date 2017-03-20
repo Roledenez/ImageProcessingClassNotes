@@ -1,5 +1,7 @@
 package database;
 
+import com.mysql.jdbc.Statement;
+
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,10 +26,10 @@ public class PatientTable {
             {
                 Patient bean = new Patient();
                 bean.setPid(pid);
-                bean.setName(rs.getString("pname"));
+                bean.setName(rs.getString("name"));
                 bean.setNic(rs.getString("nic"));
-                bean.setAge(rs.getInt("page"));
-                bean.setWeight(rs.getInt("weight"));
+                bean.setAge(rs.getInt("age"));
+//                bean.setWeight(rs.getInt("weight"));
 //                      bean.setAgentPrice_unit(rs.getFloat("agentPrice_Unit"));
 //                      bean.setWsPrice_unit(rs.getFloat("wsPrice_Unit"));
 //                      bean.setRetailPrice_unit(rs.getFloat("retailPrice_Unit"));
@@ -50,6 +52,37 @@ public class PatientTable {
     }
 
     //insert a raw
+    public static boolean insert(Patient bean) throws Exception{
+
+        String sql= "INSERT INTO patient(pid,name,age,nic)"+
+                    "values(?,?,?,?);";
+        ResultSet keys=null;
+        try (
+                Connection conn = DBUtil.getConnection(DBType.MYSQL);
+                PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+        ){
+            stmt.setInt(1, bean.getPid());
+            stmt.setString(2, bean.getName());
+            stmt.setInt(3, bean.getAge());
+            stmt.setString(4, bean.getNic());
+
+            int affacted = stmt.executeUpdate();
+
+            if(affacted==1){
+
+            }else{
+                JOptionPane.showMessageDialog(null, "Can't insert data", "Error", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } finally{
+            if(keys!=null) keys.close();
+        }
+        return true;
+    }
 
     //delete a raw
 
