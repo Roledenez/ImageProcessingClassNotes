@@ -4,15 +4,19 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by Roledene on 3/17/2017.
  */
 public class Processor {
     String command;
+    String pattern = "/([\\d.+])/";
+
     public static String DEFAULT_PATH = System.getProperty("user.dir")+ File.separator+"images"+ File.separator;
 
-    public void compate(){
+    public String compate(){
         // TODO add your handling code here:
 
 //        System.out.println(DEFAULT_PATH); //C:\apache\ImageMagick\
@@ -39,6 +43,50 @@ public class Processor {
             output += t.getMessage();
             t.printStackTrace();
         }
-        System.out.println(output);
+//        System.out.println(output);
+        return output;
     }
+
+    public String getComparedValues(String value){
+//        String pattern = "\\((\\d+\\.?\\d*)\\)?";// extract the string values by regular expression, this is the pattern
+        String pattern = "\\((\\d+\\.?\\d*)\\)?";// extract the string values by regular expression, this is the pattern
+        String result = "";
+        try {
+            Pattern r = Pattern.compile(pattern);
+            Matcher m = r.matcher(value);
+            if (m.find()) {
+                result = m.group(1);
+            } else {
+                System.out.println("Image comparison values are not match with regex \n Error: "+value);
+            }
+        }catch (Exception e){
+            e.fillInStackTrace();
+            return e.getMessage();
+        }
+        return result;
+    }
+
+    public String[] getComparedValues2(String value){
+//        String pattern = "\\((\\d+\\.?\\d*)\\)?";// extract the string values by regular expression, this is the pattern
+        String pattern = "\\d+,\\d+";// extract the string values by regular expression, this is the pattern
+        String result = "";
+        String strings[] = new String[2];
+        try {
+            Pattern r = Pattern.compile(pattern);
+            Matcher m = r.matcher(value);
+            if (m.find()) {
+                result = m.group(0);
+                strings = result.split(",");
+            } else {
+                System.out.println("Image comparison values are not match with regex \n Error: "+value);
+            }
+        }catch (Exception e){
+            e.fillInStackTrace();
+            System.err.println(e.getMessage());
+        }
+        return strings;
+    }
+
+
+    
 }

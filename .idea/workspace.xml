@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e88b956-3754-433b-ab29-cb4a36dd6342" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Test/Processor.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Test/Main.class" afterPath="$PROJECT_DIR$/out/production/Test/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Test/database/PatientTable.class" afterPath="$PROJECT_DIR$/out/production/Test/database/PatientTable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/src/Main.java" afterPath="$PROJECT_DIR$/Test/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/src/database/PatientTable.java" afterPath="$PROJECT_DIR$/Test/src/database/PatientTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Test/src/Processor.java" afterPath="$PROJECT_DIR$/Test/src/app/Processor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/src/app/Processor.java" afterPath="$PROJECT_DIR$/Test/src/app/Processor.java" />
     </list>
     <ignored path="TestEmptyProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,23 +25,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="221">
+              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Processor.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Processor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Test/src/app/Processor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="304">
+              <caret line="90" column="4" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#compate#0;class#Processor#0" expanded="false" />
+                <element signature="method#getComparedValues#0;class#Processor#0" expanded="false" />
+                <element signature="method#getComparedValues2#0;class#Processor#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -163,8 +160,8 @@
         <option value="$PROJECT_DIR$/Test/src/database/DBUtil.java" />
         <option value="$PROJECT_DIR$/Test/src/database/Patient.java" />
         <option value="$PROJECT_DIR$/Test/src/database/PatientTable.java" />
-        <option value="$PROJECT_DIR$/Test/src/app/Processor.java" />
         <option value="$PROJECT_DIR$/Test/src/Main.java" />
+        <option value="$PROJECT_DIR$/Test/src/app/Processor.java" />
       </list>
     </option>
   </component>
@@ -1016,12 +1013,12 @@
       <workItem from="1488874359961" duration="226000" />
       <workItem from="1488874852978" duration="2050000" />
       <workItem from="1489722785190" duration="5868000" />
-      <workItem from="1490008121966" duration="8264000" />
+      <workItem from="1490008121966" duration="12025000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16408000" />
+    <option name="totallyTimeSpent" value="20169000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1083,6 +1080,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#compate#0;class#Processor#0" expanded="false" />
+            <element signature="method#getComparedValues#0;class#Processor#0" expanded="false" />
+            <element signature="method#getComparedValues2#0;class#Processor#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1179,21 +1179,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/src/app/Processor.java">
+    <entry file="file://$PROJECT_DIR$/Test/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/Test/src/app/Processor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="10" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="304">
+          <caret line="90" column="4" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#compate#0;class#Processor#0" expanded="false" />
+            <element signature="method#getComparedValues#0;class#Processor#0" expanded="false" />
+            <element signature="method#getComparedValues2#0;class#Processor#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

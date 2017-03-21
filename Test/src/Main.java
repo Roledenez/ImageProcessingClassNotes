@@ -7,8 +7,11 @@ public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println(Processor.DEFAULT_PATH);
 
-//        app.Processor p = new app.Processor();
-//        p.compate();
+        app.Processor p = new app.Processor();
+        System.out.println(p.getComparedValues(p.compate()));
+        String s[] = p.getComparedValues2(p.compate());
+        System.out.println(s[0]);
+        System.out.println(s[1]);
 
 //////////////////////////////////////////////////////////////////////
 //        Connection conn = DBUtil.getConnection(DBType.MYSQL);
