@@ -1,11 +1,12 @@
 package app;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static app.FileManager.DEFAULT_PATH;
 
 /**
  * Created by Roledene on 3/17/2017.
@@ -14,7 +15,7 @@ public class Processor {
     String command;
     String pattern = "/([\\d.+])/";
 
-    public static String DEFAULT_PATH = System.getProperty("user.dir")+ File.separator+"images"+ File.separator;
+//    public static String DEFAULT_PATH = System.getProperty("user.dir")+ File.separator+"images"+ File.separator;
 
     public String compate(){
         // TODO add your handling code here:
@@ -88,5 +89,5 @@ public class Processor {
     }
 
 
-    
+
 }

@@ -8,10 +8,10 @@ import java.sql.SQLException;
  * Created by Roledene on 3/20/2017.
  */
 public class DBUtil {
-    private static final String USERNAME ="root";
-    private static final String PASSWORD ="";
-    private static final String DATABASE ="test";
-    private static final String CONN ="jdbc:mysql://localhost:3306/"+DATABASE;
+    private static final String USERNAME ="storytel_sachini";
+    private static final String PASSWORD ="Hello@123";
+    private static final String DATABASE ="storytel_imageprocessing";
+    private static final String CONN ="jdbc:mysql://199.168.184.42:3306/"+DATABASE;
 
     public static Connection getConnection(DBType dbType) throws SQLException {
         switch(dbType){
